@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-studentpostapp-dev-201408-authRole",
+      "UnauthRoleArn": "arn:aws:iam::261511020376:role/amplify-studentpostapp-dev-201408-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::261511020376:role/amplify-studentpostapp-dev-201408-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-studentpostapp-dev-201408-deployment",
+      "UnauthRoleName": "amplify-studentpostapp-dev-201408-unauthRole",
+      "StackName": "amplify-studentpostapp-dev-201408",
+      "StackId": "arn:aws:cloudformation:us-east-1:261511020376:stack/amplify-studentpostapp-dev-201408/aa1dae90-7996-11ec-8c08-12996053af03",
+      "AmplifyAppId": "d3dc8igq910gx5"
+    },
+    "categories": {
+      "auth": {
+        "studentpostapp0f445b8b": {}
+      }
+    }
+  }
+}

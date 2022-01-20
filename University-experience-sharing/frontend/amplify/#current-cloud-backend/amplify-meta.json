@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-studentpostapp-dev-201408-authRole",
+      "UnauthRoleArn": "arn:aws:iam::261511020376:role/amplify-studentpostapp-dev-201408-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::261511020376:role/amplify-studentpostapp-dev-201408-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-studentpostapp-dev-201408-deployment",
+      "UnauthRoleName": "amplify-studentpostapp-dev-201408-unauthRole",
+      "StackName": "amplify-studentpostapp-dev-201408",
+      "StackId": "arn:aws:cloudformation:us-east-1:261511020376:stack/amplify-studentpostapp-dev-201408/aa1dae90-7996-11ec-8c08-12996053af03",
+      "AmplifyAppId": "d3dc8igq910gx5"
+    }
+  },
+  "auth": {
+    "studentpostapp0f445b8b": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studentpostapp-dev-201408-deployment/amplify-cfn-templates/auth/studentpostapp0f445b8b-cloudformation-template.json",
+        "logicalId": "authstudentpostapp0f445b8b"
+      },
+      "lastPushTimeStamp": "2022-01-20T02:25:53.826Z",
+      "output": {
+        "UserPoolId": "us-east-1_wccD3MBGb",
+        "AppClientIDWeb": "6eitov7rj4nln2v7mduvgl9gsg",
+        "AppClientID": "5umpkrl4hsckfgp5h1hev21qom",
+        "IdentityPoolId": "us-east-1:3e9ff5e4-0d47-4261-85f2-370c2a011a53",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:261511020376:userpool/us-east-1_wccD3MBGb",
+        "IdentityPoolName": "studentpostapp0f445b8b_identitypool_0f445b8b__dev",
+        "UserPoolName": "studentpostapp0f445b8b_userpool_0f445b8b"
+      },
+      "lastPushDirHash": "Pf8D7jBWdJWCS/8J3ak27Kfr4co="
+    }
+  }
+}
