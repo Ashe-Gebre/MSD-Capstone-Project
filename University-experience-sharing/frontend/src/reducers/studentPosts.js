@@ -17,7 +17,7 @@ export default (studentPosts = [], action) => {
     case UPDATE:
       return studentPosts.map((item) =>
         item._id === action.payload._id ? action.payload : item
-      ); 
+      );
     case DELETE:
       return studentPosts.filter((item) => item._id !== action.payload);
     case LIKE:

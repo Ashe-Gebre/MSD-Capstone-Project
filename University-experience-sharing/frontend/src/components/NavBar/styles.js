@@ -40,7 +40,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    margin: "30px 0",
+    margin: "10px 0",
     display: "flex",
     borderRadius: 15,
     padding: "10px 50px",

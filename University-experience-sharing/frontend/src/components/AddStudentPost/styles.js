@@ -20,6 +20,13 @@ export default makeStyles((theme) => ({
   },
   buttonSubmit: {
     marginBottom: 10,
+    borderRadius: '50%',
+    backgroundColor: 'green'
+  },
+  buttonClear: {
+    marginBottom: 10,
+    borderRadius: '50%',
+   
   },
 }));
 

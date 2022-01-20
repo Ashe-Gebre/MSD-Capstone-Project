@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import * as service from "../service/server";   //  from API...connections to backend using axios @Ashe
 
 import {
@@ -13,7 +14,7 @@ import {
 export const getStudentPosts = () => async (dispatch) => {
   try {
     const { data } = await service.fetchStudentPosts();
-
+ console.log(data);
     dispatch({ type: GET_POSTS, payload: data });
   } catch (error) {
     console.log(error.message);
@@ -33,8 +34,9 @@ export const createStudentPost = (studentPost) => async (dispatch) => {
 export const updateStudentPost = (id, post) => async (dispatch) => {
   try {
     const { data } = await service.updateStudentPost(id, post);
-
+    window.location.reload()
     dispatch({ type: UPDATE, payload: data });
+
   } catch (error) {
     console.log(error);
   }
@@ -43,7 +45,7 @@ export const updateStudentPost = (id, post) => async (dispatch) => {
 export const likeStudentPost = (id) => async (dispatch) => {
   try {
     const { data } = await service.likeStudentPost(id);
-
+    window.location.reload()
     dispatch({ type: LIKE, payload: data });
   } catch (error) {
     console.log(error);

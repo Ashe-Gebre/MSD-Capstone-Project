@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/no-distracting-elements */
+/* eslint-disable no-restricted-globals */
 import React, { useState, useEffect } from "react";
 import FileBase from "react-file-base64";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux"; // useSelector is usefull to fetchdata in redux...@ashenafi Jan 2022.
-
+import img from "./img";
 import useStyles from "./styles";
 import {
   createStudentPost,
@@ -15,7 +17,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
     nationality: "",
     university: "",
     message: "",
-    tags: "",
+    tags: [],
     selectedFile: "",
   });
 
@@ -25,8 +27,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
       : null
   );
 
-  //   console.log(studentPosts);
-  //   console.log(currentId);
+  // console.log(studentPost);
 
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -42,7 +43,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
       nationality: "",
       university: "",
       message: "",
-      tags: "",
+      tags: [],
       selectedFile: "",
     });
   };
@@ -53,6 +54,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
     if (currentId === null) {
       dispatch(createStudentPost(studentData));
       clear();
+      location.reload();
     } else {
       dispatch(updateStudentPost(currentId, studentData));
       clear();
@@ -67,9 +69,9 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">
+       <Typography variant="h5">
           {currentId ? `Editing Your Experience` : "Add Your Experience"}
-        </Typography>
+        </Typography> 
         <TextField
           name="Student Name"
           variant="outlined"
@@ -79,6 +81,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setStudentData({ ...studentData, studentName: e.target.value })
           }
+          required={true}
         />
         <TextField
           name="nationality"
@@ -89,6 +92,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setStudentData({ ...studentData, nationality: e.target.value })
           }
+          required={true}
         />
         <TextField
           name="university"
@@ -99,6 +103,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setStudentData({ ...studentData, university: e.target.value })
           }
+          required={true}
         />
         <TextField
           name="message"
@@ -111,6 +116,7 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setStudentData({ ...studentData, message: e.target.value })
           }
+          required={true}
         />
         <TextField
           name="tags"
@@ -119,7 +125,10 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
           fullWidth
           value={studentData.tags}
           onChange={(e) =>
-            setStudentData({ ...studentData, tags: e.target.value.split(",") })
+            setStudentData({
+              ...studentData,
+              tags:   e.target.value ? e.target.value.split(","): [...e.target.value]
+            })
           }
         />
         <div className={classes.fileInput}>
@@ -127,21 +136,24 @@ const AddStudentPost = ({ currentId, setCurrentId }) => {
             type="file"
             multiple={false}
             onDone={({ base64 }) =>
-              setStudentData({ ...studentData, selectedFile: base64 })
+              setStudentData({
+                ...studentData,
+                selectedFile: true ? base64 : img.trim(),
+              })
             }
           />
         </div>
         <Button
           className={classes.buttonSubmit}
           variant="contained"
-          color= 'primary'
+          color="primary"
           size="large"
           type="submit"
           fullWidth
         >
           Submit
         </Button>
-        <Button
+        <Button className ={classes.buttonClear}
           variant="contained"
           color="secondary"
           size="small"

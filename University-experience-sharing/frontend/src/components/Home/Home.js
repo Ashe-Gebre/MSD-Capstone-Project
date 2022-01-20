@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/no-distracting-elements */
 import React, { useState, useEffect } from "react";
-import { Container, Grow, Grid, TextField, Paper } from "@material-ui/core";
+import { Container, Grow, Grid, TextField, Paper, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -22,7 +23,7 @@ const Home = () => {
     <Grow in>
       <Container>
         <Paper >
-          <TextField className = {myStyles.input}  variant="outlined" name="search" label="Search..." InputProps={{
+          <TextField className = {myStyles.input}  variant="outlined" name="search" label="Search..."  InputProps={{
   endAdornment: (
     <InputAdornment position="start">
       <SearchIcon />
@@ -32,7 +33,7 @@ const Home = () => {
         </Paper>
         <Grid
           container
-          justify="space-between"
+          justifyContent="space-between"
           alignItems="stretch"
           spacing={3}
         >
@@ -43,6 +44,9 @@ const Home = () => {
             <AddStudentPost currentId={currentId} setCurrentId={setCurrentId} />
           </Grid>
         </Grid>
+        <br/>
+        <marquee><Typography style = {{fontSize:'x-large', color: "brown", fontStretch:'extra-expanded'}}> This is a <i style = {{color:'green'}}> University Student Experience Sharing Website </i> for school practice by <b style = {{color: "#4a54f1"}}>Ashenafi Gebretekle </b>with Professor <b style = {{color: "#4a54f1"}}>Unubold Tumenbayar</b> for the course CS566 at <b style = {{color: "#4a54f1"}}>Maharishi International University</b>, January 2021</Typography> </marquee>
+        <hr/>
       </Container>
     </Grow>
   );
